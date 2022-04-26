@@ -1,38 +1,71 @@
-.App {
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(to right, #000000, #fca311, #e5e5e5);
+}
+
+h1{
   text-align: center;
+  color: #8338ec;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  height: 100vh;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.calculadora-grid{
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  min-height: 80vh;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: minmax(80px, auto) repeat(5, 80px);
 }
 
-.App-link {
-  color: #61dafb;
+.calculadora-grid > button{
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+  border: 1.5px solid white;
+  outline: none;
+  background-color: #ffd000;
+  margin: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculadora-grid > button:hover{
+  background-color: #e5e5e5;
+}
+
+.span-two{
+  grid-column: span 2;
+}
+
+.output{
+  grid-column: 1 / -1;
+  margin-bottom: .5rem;
+  background-color: #e5e5e5;
+  display: flex;
+  border-radius: 1rem;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .operando-anterior{
+  color:#00000090;
+  font-size: 1.5rem;
+}
+
+.output .operando-actual{
+  color: #480ca890;
+  font-size: 1.5rem;
 }
